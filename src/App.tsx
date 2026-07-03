@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
 
 function App() {
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const OVERLAY_ID = '__cs_overlay';
@@ -77,8 +78,9 @@ function App() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative h-screen overflow-hidden bg-neutral-950 text-white font-sans">
-      <div className="absolute inset-0 bg-neutral-900" />
+    <div className="relative h-screen overflow-hidden bg-neutral-950 text-white font-sans">
+      <Header />
+      <Hero />
     </div>
   );
 }
