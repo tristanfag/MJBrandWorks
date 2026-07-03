@@ -1,60 +1,69 @@
-import { Search, Lightbulb, Pencil, Rocket } from 'lucide-react';
+import { ClipboardCheck, Compass, Layers3, Rocket } from 'lucide-react';
 
 const steps = [
   {
-    icon: Search,
+    icon: Compass,
     number: '01',
-    title: 'Discover',
-    description: 'Deep-dive into your market, audience, and competition to uncover positioning opportunities.',
+    title: 'Audit and Position',
+    description: 'We review the current brand, offer, competitors, customer journey, and website friction before any visual work starts.',
+    output: 'Positioning notes, page priorities, and creative direction.',
   },
   {
-    icon: Lightbulb,
+    icon: Layers3,
     number: '02',
-    title: 'Strategize',
-    description: 'Define your brand narrative, values, and messaging architecture.',
+    title: 'Build the System',
+    description: 'We design the identity, page structure, content blocks, and reusable visual rules around the buying decision.',
+    output: 'Identity system, UX layouts, copy structure, and design components.',
   },
   {
-    icon: Pencil,
+    icon: ClipboardCheck,
     number: '03',
-    title: 'Design',
-    description: 'Craft the visual identity \u2014 logo, typography, color systems, and all brand collateral.',
+    title: 'Refine and Prepare',
+    description: 'We tighten hierarchy, check mobile behavior, align campaign assets, and make sure the brand is ready for real use.',
+    output: 'Responsive screens, launch assets, and handoff documentation.',
   },
   {
     icon: Rocket,
     number: '04',
-    title: 'Launch',
-    description: 'Roll out your brand across every touchpoint with guidelines and ongoing support.',
+    title: 'Launch and Improve',
+    description: 'After launch, we help measure what customers do, then improve pages, offers, and creative based on real signals.',
+    output: 'Iteration plan, test ideas, and ongoing creative support.',
   },
 ];
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 bg-neutral-950 border-t border-neutral-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <p className="text-brand-500 text-sm font-medium uppercase tracking-wider mb-4">
-            Our Process
+    <section id="process" className="bg-[#121314] py-20 sm:py-24">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
+        <div className="mb-14 max-w-3xl">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-[#ff633e]">
+            Process
           </p>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-            From vision to reality.
+          <h2 className="text-[34px] font-semibold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl">
+            A practical process with clear decisions at every step.
           </h2>
-          <p className="mt-6 text-neutral-400 text-lg leading-relaxed">
-            A proven four-phase approach that takes brands from concept to market with precision and purpose.
+          <p className="mt-6 text-lg leading-relaxed text-white/64">
+            Good branding should not feel mysterious. We keep the work structured, collaborative,
+            and tied to the places your customers actually interact with the business.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-4 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="relative">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center">
-                  <step.icon className="w-5 h-5 text-brand-500" strokeWidth={1.5} />
+            <article key={step.number} className="rounded-lg bg-[#18191a] p-7">
+              <div className="flex items-center justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#221a17] text-[#ff633e]">
+                  <step.icon className="h-5 w-5" strokeWidth={1.6} />
                 </div>
-                <span className="text-neutral-700 text-sm font-mono font-medium">{step.number}</span>
+                <span className="text-sm font-semibold text-white/34">{step.number}</span>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3">{step.title}</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">{step.description}</p>
-            </div>
+              <h3 className="mt-8 text-2xl font-semibold text-white">{step.title}</h3>
+              <p className="mt-4 text-[15px] leading-relaxed text-white/62">{step.description}</p>
+              <div className="mt-7 border-t border-white/8 pt-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ff633e]">Output</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/54">{step.output}</p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

@@ -1,95 +1,115 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, MessageSquare, Timer } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 bg-neutral-950 border-t border-neutral-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="contact" className="bg-[#121314] py-20 sm:py-24">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1fr]">
           <div>
-            <p className="text-brand-500 text-sm font-medium uppercase tracking-wider mb-4">
-              Let's Work Together
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-[#ff633e]">
+              Start a Project
             </p>
-            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-              Ready to launch your brand?
+            <h2 className="max-w-3xl text-[36px] font-semibold leading-[1.06] tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Tell us what needs to look more premium, clearer, or easier to buy.
             </h2>
-            <p className="mt-6 text-neutral-400 text-lg leading-relaxed">
-              Tell us about your project and we'll get back to you within 24 hours with a plan to
-              take your brand to the next level.
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/64">
+              Share the current website, the offer, and what feels stuck. We will reply with the
+              most sensible next step - whether that is a brand audit, a focused redesign, or a
+              full identity and website system.
             </p>
 
-            <div className="mt-12 space-y-6">
-              <div>
-                <p className="text-neutral-500 text-sm mb-1">Email</p>
-                <p className="text-white font-medium">hello@mjbrandworks.com</p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-1 2xl:grid-cols-3">
+              <div className="rounded-lg bg-[#18191a] p-5">
+                <Mail className="h-5 w-5 text-[#ff633e]" strokeWidth={1.6} />
+                <p className="mt-4 text-sm text-white/48">Email</p>
+                <p className="mt-1 font-medium text-white">hello@mjbrandworks.com</p>
               </div>
-              <div>
-                <p className="text-neutral-500 text-sm mb-1">Follow Us</p>
-                <p className="text-white font-medium">@mjbrandworks</p>
+              <div className="rounded-lg bg-[#18191a] p-5">
+                <Timer className="h-5 w-5 text-[#ff633e]" strokeWidth={1.6} />
+                <p className="mt-4 text-sm text-white/48">Response</p>
+                <p className="mt-1 font-medium text-white">Within 1 business day</p>
+              </div>
+              <div className="rounded-lg bg-[#18191a] p-5">
+                <MessageSquare className="h-5 w-5 text-[#ff633e]" strokeWidth={1.6} />
+                <p className="mt-4 text-sm text-white/48">Best fit</p>
+                <p className="mt-1 font-medium text-white">Brand and web systems</p>
               </div>
             </div>
           </div>
 
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <form className="rounded-lg bg-[#18191a] p-6 sm:p-8" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="block text-sm text-neutral-400 mb-2">
-                  Your Name
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/62">
+                  Name
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-brand-500 transition-colors"
-                  placeholder="John Doe"
+                  className="w-full rounded-lg bg-[#101112] px-4 py-3 text-white outline-none ring-1 ring-white/8 transition focus:ring-[#ff633e]"
+                  placeholder="Your name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm text-neutral-400 mb-2">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-white/62">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-brand-500 transition-colors"
-                  placeholder="john@company.com"
+                  className="w-full rounded-lg bg-[#101112] px-4 py-3 text-white outline-none ring-1 ring-white/8 transition focus:ring-[#ff633e]"
+                  placeholder="you@company.com"
                 />
               </div>
             </div>
 
-            <div>
-              <label htmlFor="service" className="block text-sm text-neutral-400 mb-2">
-                What do you need?
-              </label>
-              <select
-                id="service"
-                className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors appearance-none"
-              >
-                <option value="">Select a service</option>
-                <option value="brand-identity">Brand Identity</option>
-                <option value="rebranding">Rebranding</option>
-                <option value="web-design">Web Design</option>
-                <option value="brand-strategy">Brand Strategy</option>
-                <option value="other">Other</option>
-              </select>
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              <div>
+                <label htmlFor="company" className="mb-2 block text-sm font-medium text-white/62">
+                  Company or website
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  className="w-full rounded-lg bg-[#101112] px-4 py-3 text-white outline-none ring-1 ring-white/8 transition focus:ring-[#ff633e]"
+                  placeholder="brand.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-white/62">
+                  Project type
+                </label>
+                <select
+                  id="projectType"
+                  className="w-full rounded-lg bg-[#101112] px-4 py-3 text-white outline-none ring-1 ring-white/8 transition focus:ring-[#ff633e]"
+                >
+                  <option>Brand and website</option>
+                  <option>Brand strategy</option>
+                  <option>Website redesign</option>
+                  <option>Launch creative</option>
+                  <option>Brand audit</option>
+                </select>
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm text-neutral-400 mb-2">
-                Tell us about your project
+            <div className="mt-5">
+              <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/62">
+                What should improve?
               </label>
               <textarea
                 id="message"
-                rows={5}
-                className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
-                placeholder="Give us the details..."
+                rows={6}
+                className="w-full resize-none rounded-lg bg-[#101112] px-4 py-3 text-white outline-none ring-1 ring-white/8 transition focus:ring-[#ff633e]"
+                placeholder="Tell us what you sell, what is not working, and what the brand should feel like."
               />
             </div>
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-white text-neutral-950 px-8 py-4 text-base font-medium rounded-full hover:bg-brand-400 transition-colors group"
+              className="group mt-7 inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-neutral-950 transition hover:bg-[#ff633e] sm:w-auto"
             >
-              Send Message
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              Send Inquiry
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.8} />
             </button>
           </form>
         </div>
